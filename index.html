@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Flor de Tango – Association de tango argentin à Grasse. Cours de tango, milonga et valse argentine avec Céline et Édouard." />
+  <title>Flor de Tango – Association de Tango à Grasse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─────────────────────────────────────────
+       VARIABLES & RESET
+    ───────────────────────────────────────── */
+    :root {
+      --rouge:   #8B1A1A;
+      --rouge-clair: #a82222;
+      --or:      #C9A84C;
+      --or-clair: #dfc06a;
+      --noir:    #0E0E0E;
+      --noir-soft: #111111;
+      --creme:   #FAF6EF;
+      --creme-dark: #f0e9da;
+      --gris:    #3a3a3a;
+      --gris-clair: #888;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      background: var(--noir);
+      color: var(--creme);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* ─────────────────────────────────────────
+       NAVIGATION
+    ───────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(14, 14, 14, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      transition: padding 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--or);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--creme);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--or);
+    }
+
+    /* ─────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://raw.githubusercontent.com/pierre06520/Flor-de-Tango/main/IMG_5373.jpeg');
+      background-size: cover;
+      background-position: center 25%;
+      filter: brightness(0.35);
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+
+    .hero:hover .hero-bg {
+      transform: scale(1.0);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--creme);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--or);
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 300;
+      color: rgba(250, 246, 239, 0.85);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--rouge);
+      color: var(--creme);
+      border-color: var(--rouge);
+    }
+
+    .btn-primary:hover {
+      background: var(--rouge-clair);
+      border-color: var(--rouge-clair);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--or);
+      border-color: var(--or);
+    }
+
+    .btn-outline:hover {
+      background: var(--or);
+      color: var(--noir);
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(250, 246, 239, 0.4);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(201, 168, 76, 0.6), transparent);
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
+      50%  { opacity: 1; transform: scaleY(1); }
+      100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+    }
+
+    /* ─────────────────────────────────────────
+       SECTION COMMON
+    ───────────────────────────────────────── */
+    section {
+      padding: 7rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--or);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─────────────────────────────────────────
+       À PROPOS
+    ───────────────────────────────────────── */
+    #apropos {
+      background: var(--creme);
+      color: var(--noir);
+    }
+
+    .apropos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .apropos-image-wrapper {
+      position: relative;
+    }
+
+    .apropos-image-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -1.5rem;
+      left: -1.5rem;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      border: 2px solid var(--or);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .apropos-image-wrapper img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .apropos-text .section-title {
+      color: var(--noir);
+    }
+
+    .apropos-text p {
+      color: var(--gris);
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .apropos-text p:last-of-type {
+      margin-bottom: 2rem;
+    }
+
+    .founders-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--noir);
+      color: var(--creme);
+      padding: 0.8rem 1.4rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    .founders-badge span {
+      color: var(--or);
+      font-weight: 700;
+    }
+
+    /* ─────────────────────────────────────────
+       NOS DANSES
+    ───────────────────────────────────────── */
+    #danses {
+      background: var(--noir-soft);
+    }
+
+    #danses .section-title {
+      color: var(--creme);
+    }
+
+    .danses-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .danses-header .divider {
+      margin: 0 auto 2.5rem;
+    }
+
+    .danses-intro {
+      font-size: 1.05rem;
+      color: rgba(250, 246, 239, 0.7);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .danses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .danse-card {
+      background: #1a1a1a;
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .danse-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--or);
+      transition: height 0.4s ease;
+    }
+
+    .danse-card:hover {
+      background: #1f1f1f;
+    }
+
+    .danse-card:hover::before {
+      height: 100%;
+    }
+
+    .danse-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgba(201, 168, 76, 0.12);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .danse-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--creme);
+      margin-bottom: 1rem;
+    }
+
+    .danse-card p {
+      font-size: 0.95rem;
+      color: rgba(250, 246, 239, 0.6);
+      line-height: 1.8;
+    }
+
+    /* ─────────────────────────────────────────
+       PROFESSEURS
+    ───────────────────────────────────────── */
+    #professeurs {
+      background: var(--creme);
+      color: var(--noir);
+    }
+
+    .professeurs-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .professeurs-inner .section-title {
+      color: var(--noir);
+    }
+
+    .professeurs-inner .divider {
+      margin: 0 auto 2.5rem;
+    }
+
+    .professeurs-lead {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--gris);
+      margin-bottom: 2rem;
+      line-height: 1.9;
+    }
+
+    .professeurs-lead strong {
+      color: var(--rouge);
+      font-weight: 700;
+    }
+
+    .parcours-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin: 3rem 0;
+      border: 1px solid rgba(14, 14, 14, 0.12);
+    }
+
+    .parcours-item {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid rgba(14, 14, 14, 0.12);
+      text-align: center;
+    }
+
+    .parcours-item:last-child {
+      border-right: none;
+    }
+
+    .parcours-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .parcours-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--rouge);
+      margin-bottom: 0.5rem;
+    }
+
+    .parcours-item p {
+      font-size: 0.85rem;
+      color: var(--gris);
+      line-height: 1.6;
+    }
+
+    .villes-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+
+    .ville-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gris);
+      background: var(--creme-dark);
+      padding: 0.35rem 0.9rem;
+      border: 1px solid rgba(14, 14, 14, 0.15);
+    }
+
+    /* ─────────────────────────────────────────
+       LIEUX & HORAIRES
+    ───────────────────────────────────────── */
+    #lieux {
+      background: var(--noir-soft);
+    }
+
+    #lieux .section-title {
+      color: var(--creme);
+    }
+
+    .lieux-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .lieux-header .divider {
+      margin: 0 auto 2.5rem;
+    }
+
+    .lieux-subtitle {
+      font-size: 1rem;
+      color: rgba(250, 246, 239, 0.6);
+    }
+
+    .lieux-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .lieu-card {
+      background: #1a1a1a;
+      overflow: hidden;
+    }
+
+    .lieu-header {
+      padding: 1.8rem 2rem;
+      background: var(--rouge);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .lieu-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .lieu-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--creme);
+      margin-bottom: 0.25rem;
+    }
+
+    .lieu-header address {
+      font-style: normal;
+      font-size: 0.82rem;
+      color: rgba(250, 246, 239, 0.8);
+      line-height: 1.5;
+    }
+
+    .lieu-horaires {
+      padding: 1.5rem 2rem;
+    }
+
+    .horaire-row {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .horaire-row:last-child {
+      border-bottom: none;
+    }
+
+    .horaire-jour {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--or);
+      white-space: nowrap;
+    }
+
+    .horaire-cours {
+      font-size: 0.9rem;
+      color: var(--creme);
+    }
+
+    .horaire-heure {
+      font-size: 0.82rem;
+      color: rgba(250, 246, 239, 0.5);
+      white-space: nowrap;
+    }
+
+    .lieu-map {
+      width: 100%;
+      height: 200px;
+      border: none;
+      display: block;
+      filter: grayscale(30%);
+    }
+
+    /* ─────────────────────────────────────────
+       CONTACT
+    ───────────────────────────────────────── */
+    #contact {
+      background: var(--noir);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info .section-title {
+      color: var(--creme);
+    }
+
+    .contact-text {
+      font-size: 1rem;
+      color: rgba(250, 246, 239, 0.65);
+      margin-bottom: 2.5rem;
+      line-height: 1.9;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--creme);
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .contact-link:hover {
+      opacity: 1;
+      color: var(--or);
+    }
+
+    .contact-link-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 1rem;
+      flex-shrink: 0;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .contact-link:hover .contact-link-icon {
+      border-color: var(--or);
+      background: rgba(201, 168, 76, 0.1);
+    }
+
+    /* Contact Form */
+    .contact-form-wrapper {
+      background: #161616;
+      padding: 2.5rem;
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--creme);
+      margin-bottom: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(250, 246, 239, 0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--creme);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.85rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(250, 246, 239, 0.25);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--or);
+    }
+
+    .form-group textarea {
+      height: 140px;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--rouge);
+      color: var(--creme);
+      border: 2px solid var(--rouge);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover {
+      background: var(--rouge-clair);
+      border-color: var(--rouge-clair);
+    }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    footer {
+      background: #070707;
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+      padding: 2.5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--or);
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(250, 246, 239, 0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(250, 246, 239, 0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--or);
+    }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 2rem; }
+      .nav-links { gap: 1.5rem; }
+
+      .apropos-grid,
+      .lieux-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .apropos-image-wrapper::before { display: none; }
+
+      .danses-grid { grid-template-columns: 1fr; gap: 2px; }
+
+      .parcours-grid { grid-template-columns: 1fr; }
+      .parcours-item { border-right: none; border-bottom: 1px solid rgba(14, 14, 14, 0.12); }
+      .parcours-item:last-child { border-bottom: none; }
+
+      footer { flex-direction: column; text-align: center; padding: 2rem; }
+      .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 5rem 1.5rem; }
+
+      .danses-grid { grid-template-columns: 1fr; }
+
+      .lieu-header { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════ NAVIGATION ══════════════════ -->
+  <nav>
+    <div class="nav-logo">Flor de Tango</div>
+    <nav class="nav-links">
+      <a href="#apropos">À propos</a>
+      <a href="#danses">Nos danses</a>
+      <a href="#professeurs">Qui sommes-nous</a>
+      <a href="#lieux">Saison 2025–2026</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </nav>
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Association de Danse · Grasse · Alpes-Maritimes</span>
+      <h1>Flor de <em>Tango</em></h1>
+      <p class="hero-tagline">
+        Laissez-vous emporter par la passion du tango argentin,<br>
+        la sensualité de la milonga et la grâce de la valse argentine.
+      </p>
+      <div class="hero-actions">
+        <a href="#lieux" class="btn btn-primary">Rejoindre les cours</a>
+        <a href="#danses" class="btn btn-outline">Découvrir nos danses</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Défiler</div>
+  </section>
+
+  <!-- ══════════════════ À PROPOS ══════════════════ -->
+  <section id="apropos">
+    <div class="section-inner">
+      <div class="apropos-grid">
+        <div class="apropos-image-wrapper">
+          <img
+            src="https://raw.githubusercontent.com/pierre06520/Flor-de-Tango/main/IMG_5373.jpeg"
+            alt="Céline et Édouard – Flor de Tango, cours de tango argentin à Grasse"
+          />
+        </div>
+        <div class="apropos-text">
+          <span class="section-label">Notre histoire</span>
+          <h2 class="section-title">Une association dédiée au tango argentin</h2>
+          <div class="divider"></div>
+          <p>
+            Flor de Tango est une association dédiée à la transmission du tango argentin sous toutes ses formes : le tango, la milonga et la valse argentine. Notre approche est à la fois technique et poétique, ancrée dans la tradition de Buenos Aires.
+          </p>
+          <p>
+            Fondée et animée par <strong>Céline Baquet et Édouard Pacaud</strong>, l'association accueille danseurs de tous niveaux dans une atmosphère bienveillante et passionnée. Du débutant curieux au danseur confirmé, chacun trouve sa place au sein de Flor de Tango.
+          </p>
+          <p>
+            Installés à Grasse, au cœur des Alpes-Maritimes, nous proposons des cours hebdomadaires dans deux salles de danse idéalement situées pour vous accueillir.
+          </p>
+          <div class="founders-badge">
+            <span>✦</span> Céline Baquet &amp; Édouard Pacaud
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ NOS DANSES ══════════════════ -->
+  <section id="danses">
+    <div class="section-inner">
+      <div class="danses-header">
+        <span class="section-label">Ce que nous enseignons</span>
+        <h2 class="section-title">Nos danses</h2>
+        <div class="divider"></div>
+        <p class="danses-intro">
+          Trois disciplines du Rio de la Plata, une même invitation au voyage et à la rencontre.
+        </p>
+      </div>
+      <div class="danses-grid">
+        <div class="danse-card">
+          <span class="danse-num">01</span>
+          <h3>Tango Argentin</h3>
+          <p>
+            Danse de l'improvisation et de la connexion, le tango argentin se construit sur un dialogue intime entre deux corps. Posture, abrazo, intention : apprenez à danser à l'écoute de votre partenaire et de la musique.
+          </p>
+        </div>
+        <div class="danse-card">
+          <span class="danse-num">02</span>
+          <h3>Milonga</h3>
+          <p>
+            Ancêtre joyeuse et rythmée du tango, la milonga se danse sur un temps double, léger et espiègle. Elle développe la musicalité, la légèreté du pas et le plaisir pur de la danse sociale.
+          </p>
+        </div>
+        <div class="danse-card">
+          <span class="danse-num">03</span>
+          <h3>Valse Argentine</h3>
+          <p>
+            Plus ronde et aérienne que le tango, la valse argentine conserve l'abrazo et l'improvisation propres au tango rioplatense, tout en ajoutant une fluidité et une légèreté caractéristiques des valses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ PROFESSEURS ══════════════════ -->
+  <section id="professeurs">
+    <div class="section-inner">
+      <div class="professeurs-inner">
+        <span class="section-label">Vos professeurs</span>
+        <h2 class="section-title">Céline &amp; Édouard</h2>
+        <div class="divider"></div>
+        <p class="professeurs-lead">
+          Formés à Paris puis à Buenos Aires, <strong>Céline Baquet et Édouard Pacaud</strong> ont perfectionné leur art auprès des meilleurs maîtres du tango argentin et fréquenté les milongas historiques de la capitale argentine — Sin Rumbo, Sunderland, et bien d'autres.
+        </p>
+        <p class="professeurs-lead">
+          Leur pédagogie allie rigueur technique et sensibilité musicale, dans une atmosphère chaleureuse et bienveillante. Que vous débutiez ou souhaitiez approfondir votre danse, ils sauront vous accompagner à chaque étape de votre progression.
+        </p>
+        <div class="parcours-grid">
+          <div class="parcours-item">
+            <span class="parcours-icon">🎓</span>
+            <h4>Formation</h4>
+            <p>Paris puis Buenos Aires, milongas Sin Rumbo & Sunderland</p>
+          </div>
+          <div class="parcours-item">
+            <span class="parcours-icon">🗺️</span>
+            <h4>Expérience</h4>
+            <p>Cours à Nantes, La Rochelle, Cholet, Vannes, Angers, Laval</p>
+          </div>
+          <div class="parcours-item">
+            <span class="parcours-icon">📍</span>
+            <h4>Aujourd'hui</h4>
+            <p>Installés à Grasse, au cœur des Alpes-Maritimes</p>
+          </div>
+        </div>
+        <div class="villes-list">
+          <span class="ville-tag">Nantes</span>
+          <span class="ville-tag">La Rochelle</span>
+          <span class="ville-tag">Cholet</span>
+          <span class="ville-tag">Vannes</span>
+          <span class="ville-tag">Angers</span>
+          <span class="ville-tag">Laval</span>
+          <span class="ville-tag">Grasse</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ LIEUX & HORAIRES ══════════════════ -->
+  <section id="lieux">
+    <div class="section-inner">
+      <div class="lieux-header">
+        <span class="section-label">Saison 2025 – 2026</span>
+        <h2 class="section-title">Cours &amp; Horaires</h2>
+        <div class="divider"></div>
+        <p class="lieux-subtitle">Deux salles au cœur de Grasse pour vous accueillir tout au long de la saison</p>
+      </div>
+      <div class="lieux-grid">
+
+        <!-- Salle des Augustins -->
+        <div class="lieu-card">
+          <div class="lieu-header">
+            <span class="lieu-icon">🏛️</span>
+            <div>
+              <h3>Salle des Augustins</h3>
+              <address>6 boulevard du Jeu de Ballon, Grasse</address>
+            </div>
+          </div>
+          <div class="lieu-horaires">
+            <div class="horaire-row">
+              <span class="horaire-jour">Jeudi</span>
+              <span class="horaire-cours">Cours fondamentaux</span>
+              <span class="horaire-heure">19h15 – 20h30</span>
+            </div>
+            <div class="horaire-row">
+              <span class="horaire-jour">Jeudi</span>
+              <span class="horaire-cours">Pratique tous niveaux</span>
+              <span class="horaire-heure">20h30 – 22h00</span>
+            </div>
+          </div>
+          <iframe
+            class="lieu-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.9654498913754!2d6.920441076542805!3d43.65786607110206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdb44a17c75fb9%3A0xf3edfd4ef87660cd!2sSalle%20des%20Augustins!5e0!3m2!1sfr!2sfr!4v1747671193730!5m2!1sfr!2sfr"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Salle des Augustins, Grasse"
+          ></iframe>
+        </div>
+
+        <!-- Danse District -->
+        <div class="lieu-card">
+          <div class="lieu-header">
+            <span class="lieu-icon">💃</span>
+            <div>
+              <h3>Danse District</h3>
+              <address>34 traverse de la Paoute, 06130 Grasse</address>
+            </div>
+          </div>
+          <div class="lieu-horaires">
+            <div class="horaire-row">
+              <span class="horaire-jour">Mardi</span>
+              <span class="horaire-cours">Cours intermédiaires</span>
+              <span class="horaire-heure">19h15 – 20h30</span>
+            </div>
+            <div class="horaire-row">
+              <span class="horaire-jour">Mardi</span>
+              <span class="horaire-cours">Cours avancés</span>
+              <span class="horaire-heure">20h30 – 22h00</span>
+            </div>
+          </div>
+          <iframe
+            class="lieu-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.8354523027175!2d6.8999853765426195!3d43.64086027110253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdb49e25d8db97%3A0x89b2e46cdad5eaf0!2sDanse%20District!5e0!3m2!1sfr!2sfr!4v1747671282893!5m2!1sfr!2sfr"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Danse District, Grasse"
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ CONTACT ══════════════════ -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-label">Nous rejoindre</span>
+          <h2 class="section-title">Une question ?<br>Écrivez-nous.</h2>
+          <div class="divider"></div>
+          <p class="contact-text">
+            Vous souhaitez vous inscrire, obtenir plus d'informations sur nos cours, ou simplement prendre contact ? N'hésitez pas à nous écrire — nous vous répondrons dans les plus brefs délais.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:celine79.baquet@yahoo.com" class="contact-link">
+              <span class="contact-link-icon">✉</span>
+              celine79.baquet@yahoo.com
+            </a>
+            <a href="https://www.facebook.com/p/Edouard-et-C%C3%A9line-Tango-100069158237376/" target="_blank" rel="noopener" class="contact-link">
+              <span class="contact-link-icon">f</span>
+              Édouard et Céline Tango sur Facebook
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper">
+          <p class="form-title">Envoyer un message</p>
+          <form action="https://formsubmit.co/celine79.baquet@yahoo.com" method="POST">
+            <input type="hidden" name="_subject" value="Nouveau message depuis Flor de Tango" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="" />
+            <div class="form-group">
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom complet" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Votre message, votre niveau de danse, vos disponibilités…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Envoyer le message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer>
+    <div class="footer-logo">Flor de Tango</div>
+    <p class="footer-copy">© 2026 Flor de Tango · Association de danse · Grasse</p>
+    <nav class="footer-links">
+      <a href="#apropos">À propos</a>
+      <a href="#lieux">Cours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
