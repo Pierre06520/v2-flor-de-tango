@@ -1,0 +1,4 @@
+# Block all direct web access to uploaded files.
+# Files are served exclusively through download.php.
+Options -Indexes
+Deny from all
